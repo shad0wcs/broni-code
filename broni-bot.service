@@ -1,0 +1,15 @@
+[Unit]
+Description=BRONI_CODE Telegram notifier bot
+After=network.target
+
+[Service]
+Type=simple
+User=botuser
+WorkingDirectory=/opt/broni_bot
+EnvironmentFile=/opt/broni_bot/.env
+ExecStart=/opt/broni_bot/venv/bin/python /opt/broni_bot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
