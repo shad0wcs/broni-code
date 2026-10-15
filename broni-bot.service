@@ -4,10 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-User=botuser
-WorkingDirectory=/opt/broni_bot
-EnvironmentFile=/opt/broni_bot/.env
-ExecStart=/opt/broni_bot/venv/bin/python /opt/broni_bot/bot.py
+User=root
+WorkingDirectory=/opt/broni-code
+EnvironmentFile=/opt/broni-code/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/broni-code/venv/bin/python /opt/broni-code/app.py
 Restart=always
 RestartSec=5
 
